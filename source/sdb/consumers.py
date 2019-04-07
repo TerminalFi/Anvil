@@ -107,6 +107,7 @@ def start_work(data):
             'content': {
                     "action": "initialization",
                     "job_id": job.id,
+                    "job_uuid": str(job.job_uuid),
                     "job_name": job.job_name,
                     "job_status": job.job_status,
             }
@@ -140,6 +141,7 @@ def stop_work(data):
             'content': {
                 "action": job.job_status,
                 "job_id": job.id,
+                "job_uuid": str(job.job_uuid),
                 "job_status": job.job_status,
             }
         })

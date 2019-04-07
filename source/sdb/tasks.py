@@ -39,6 +39,7 @@ def scan_host(self, job_id, target_id):
             'content': {
                 "action": job.job_status,
                 "job_id": job.id,
+                "job_uuid": str(job.job_uuid),
                 "job_name": job.job_name,
                 "job_status": job.job_status
             }
@@ -56,6 +57,7 @@ def scan_host(self, job_id, target_id):
             'content': {
                 "action": job.job_status,
                 "job_id": job.id,
+                "job_uuid": str(job.job_uuid),
                 "job_name": job.job_name,
                 "job_status": job.job_status,
                 "current_stage": {'stage': job.job_stage }
@@ -74,6 +76,7 @@ def scan_host(self, job_id, target_id):
                 'content': {
                     "action": job.job_status,
                     "job_id": job.id,
+                    "job_uuid": str(job.job_uuid),
                     "job_name": job.job_name,
                     "job_status": job.job_status,
                     "current_stage": {'stage': k, 'results': results['scan']}
@@ -93,6 +96,7 @@ def scan_host(self, job_id, target_id):
             'content': {
                 "action": job.job_status,
                 "job_id": job.id,
+                "job_uuid": str(job.job_uuid),
                 "job_name": job.job_name,
                 "job_status": job.job_status
                 # "job_results": {k : v['scan'] for k, v in final_results.items()}

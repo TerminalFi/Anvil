@@ -12,25 +12,17 @@ from .serializers import AnvilJobSerializer # TargetSerializer, ScansSerializer,
 from .tasks import scan_host
 
 
-def index(request):
+def scan_overview(request):
     jobs = anvil_job.objects.all()
     completed_jobs = jobs.filter(job_status="completed").count()
     running_jobs = jobs.filter(job_status="running").count()
     terminated_jobs = jobs.filter(job_status="terminated").count()
     return render(request, "sdb/default.html", context={
         'jobs': jobs,
+        'total_jobs': jobs.count(),
         'completed_jobs': completed_jobs,
         'running_jobs': running_jobs,
         'terminated_jobs': terminated_jobs})
-
-
-# class TargetsViewSet(viewsets.ModelViewSet):
-#     """
-#     API endpoint that allows Create, Delete, Viewing of Targets
-#     """
-#     queryset = Target.objects.all().order_by('id')
-#     serializer_class = TargetSerializer
-#     lookup_field = 'uuid'
 
 
 class AnvilJobViewSet(viewsets.ModelViewSet):
