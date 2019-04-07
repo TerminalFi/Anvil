@@ -1,0 +1,94 @@
+{% load staticfiles %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Security Assessment Report Generation Engine">
+        <meta name="author" content="Zachary Schulze">
+
+        <link rel="icon" href="#">
+
+        <title>Anvil - Penetration Testing Framework</title>
+
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'vendor/fontawesome/css/all.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+
+    </head>
+    <body>
+    <div class="page-wrapper chiller-theme toggled">
+      <!-- <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+        <i class="fas fa-bars"></i>
+      </a> -->
+      
+      <!-- navbar-include  -->
+      {% include 'layouts/default/nav.html' %}
+
+      <!-- sidebar-wrapper  -->
+      <main class="page-content">
+        {% block content %}
+        <div class="container-fluid">
+          <h2>Pro Sidebar</h2>
+          <hr>
+          <div class="row">
+            <div class="form-group col-md-12">
+              <p>This is a responsive sidebar template with dropdown menu based on bootstrap 4 framework.</p>
+              <p> You can find the complete code on <a href="https://github.com/azouaoui-med/pro-sidebar-template" target="_blank">
+                  Github</a>, it contains more themes and background image option</p>
+            </div>
+            <div class="form-group col-md-12">
+              <iframe src="https://ghbtns.com/github-btn.html?user=azouaoui-med&repo=pro-sidebar-template&type=star&count=true&size=large"
+                frameborder="0" scrolling="0" width="140px" height="30px"></iframe>
+              <iframe src="https://ghbtns.com/github-btn.html?user=azouaoui-med&repo=pro-sidebar-template&type=fork&count=true&size=large"
+                frameborder="0" scrolling="0" width="140px" height="30px"></iframe>
+            </div>
+          </div>
+          <h5>More templates</h5>
+          <hr>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">          
+              <div class="card rounded-0 p-0 shadow-sm">
+                <img src="https://user-images.githubusercontent.com/25878302/53659076-e2204680-3c5a-11e9-8c00-0c10bcd945e6.jpg" class="card-img-top rounded-0" alt="Angular pro sidebar">
+                <div class="card-body text-center">
+                    <h6 class="card-title">Angular Pro Sidebar</h6>
+                    <a href="https://github.com/azouaoui-med/angular-pro-sidebar" target="_blank" class="btn btn-primary btn-sm">Github</a>
+                    <a href="https://azouaoui-med.github.io/angular-pro-sidebar/demo/" target="_blank" class="btn btn-success btn-sm">Preview</a>
+                </div>
+              </div>          
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">          
+              <div class="card rounded-0 p-0 shadow-sm">
+                <img src="https://user-images.githubusercontent.com/25878302/53659497-016ba380-3c5c-11e9-8dfd-4901ddaf090b.jpg" class="card-img-top rounded-0" alt="Angular pro sidebar">
+                <div class="card-body text-center">
+                    <h6 class="card-title">Angular Dashboard</h6>
+                    <a href="https://github.com/azouaoui-med/lightning-admin-angular" target="_blank" class="btn btn-primary btn-sm">Github</a>
+                    <a href="https://azouaoui-med.github.io/lightning-admin-angular/demo/" target="_blank" class="btn btn-success btn-sm">Preview</a>
+                </div>
+              </div>          
+            </div>
+          </div>
+        </div>
+        {% endblock %}
+
+      </main>
+      <!-- page-content" -->
+    </div>
+        <script src="{% static 'vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="{% static 'vendor/popper/popper.min.js' %}"></script>
+        <script src="{% static 'vendor/chartjs/Chart.bundle.min.js' %}"></script>
+        <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+        <script src="{% static 'js/custom.js' %}"></script>
+        <script src="{% static 'js/reconnecting-websocket.min.js' %}"></script>
+
+        {% block javascript %}
+        
+        {% endblock %}
+    </body>
+</html>

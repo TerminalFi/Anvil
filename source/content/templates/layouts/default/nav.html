@@ -1,0 +1,140 @@
+{% load static %}
+<nav id="sidebar" class="sidebar-wrapper">
+  <div class="sidebar-content">
+    <div class="sidebar-brand">
+      <a href="#">Anvil</a>
+<!--       <div id="close-sidebar">
+        <i class="fas fa-times"></i>
+      </div> -->
+    </div>
+    <!--<div class="sidebar-header">
+    </div>-->
+    <div class="sidebar-menu">
+      <ul>
+        <li class="header-menu">
+          <span>General</span>
+        </li>
+        <li class="sidebar-dropdown">
+          <a href="#">
+            <i class="fa fa-tachometer-alt"></i>
+            <span>Dashboards</span>
+            <span class="badge badge-pill badge-warning">New</span>
+          </a>
+          <div class="sidebar-submenu">
+            <ul>
+              <li>
+                <a href="#">
+                  <span>Overview</span>
+                  <span class="badge badge-pill badge-success">Pro</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">Active Scans</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="sidebar-dropdown" id="sidebar-scans">
+          <a href="#">
+            <i class="fas fa-crosshairs"></i>
+            <span>Scans</span>
+            <span class="badge badge-pill badge-danger scans-terminated"></span>
+            <span class="badge badge-pill badge-warning scans-running"></span>
+            <span class="badge badge-pill badge-success scans-completed"></span>
+          </a>
+          <div class="sidebar-submenu">
+            <ul>
+              <li>
+                <a href="#">
+                  <span>New Scan</span>
+              </a>
+              </li>
+              <hr>
+              <li>
+                <a href="#">
+                  <span>Active</span>
+                  <span class="badge badge-pill badge-warning scans-running"></span>
+              </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>Completed</span>
+                  <span class="badge badge-pill badge-success scans-completed"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>Terminated</span>
+                <span class="badge badge-pill badge-danger scans-terminated"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="sidebar-dropdown">
+          <a href="#">
+            <i class="far fa-gem"></i>
+            <span>Assets</span>
+          </a>
+          <div class="sidebar-submenu">
+            <ul>
+              <li>
+                <a href="#">General</a>
+              </li>
+              <li>
+                <a href="#">Panels</a>
+              </li>
+              <li>
+                <a href="#">Tables</a>
+              </li>
+              <li>
+                <a href="#">Icons</a>
+              </li>
+              <li>
+                <a href="#">Forms</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="header-menu">
+          <span>Extra</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-book"></i>
+            <span>API Docs.</span>
+            <span class="badge badge-pill badge-primary">Beta</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-calendar"></i>
+            <span>Release Notes</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-folder"></i>
+            <span>Known Issues</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- sidebar-menu  -->
+  </div>
+  <!-- sidebar-content  -->
+  <div class="sidebar-footer">
+    <a href="#">
+      <i class="fa fa-bell"></i>
+      <span class="badge badge-pill badge-warning notification">3</span>
+    </a>
+    <a href="#">
+      <i class="fa fa-envelope"></i>
+      <span class="badge badge-pill badge-success notification">7</span>
+    </a>
+    <a href="#">
+      <i class="fa fa-cog"></i>
+      <span class="badge-sonar"></span>
+    </a>
+  </div>
+</nav>
