@@ -33,6 +33,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     # Vendor apps
+    #Comment Out to Disable Vue
+    'webpack_loader',
     'celery',
     'channels',
     'rest_framework',
@@ -94,8 +96,7 @@ CELERY_RESULT_SERIALIZER = 'json'
 CELERY_WORKER_CONCURRENCY = 5
 
 REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10,
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'DEFAULT_RENDERER_CLASSES': (
         'rest_framework.renderers.JSONRenderer',
     )
@@ -155,5 +156,16 @@ STATICFILES_DIRS = [
 LOCALE_PATHS = [
     os.path.join(CONTENT_DIR, 'locale')
 ]
+
+# Comment Out Both of These TO Disable Vue
+FRONTEND_DIR = os.path.join(dirname(BASE_DIR), 'frontend')
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'CACHE': DEBUG,
+        'BUNDLE_DIR_NAME': '/bundles/',  # must end with slash
+        'STATS_FILE': os.path.join(FRONTEND_DIR, 'webpack-stats.json'),
+    }
+}
 
 

@@ -25,6 +25,18 @@ def scan_overview(request):
         'terminated_jobs': terminated_jobs})
 
 
+def scan_stats(request):
+    jobs = anvil_job.objects.all()
+    completed_jobs = jobs.filter(job_status="completed").count()
+    running_jobs = jobs.filter(job_status="running").count()
+    terminated_jobs = jobs.filter(job_status="terminated").count()
+    return JsonResponse({
+        'completed_jobs': {'name': 'Completed Scans', 'value': completed_jobs},
+        'running_jobs': {'name': 'Running Scans', 'value': running_jobs},
+        'terminated_jobs': {'name': 'Terminated Scans', 'value': terminated_jobs},
+        'total_jobs': {'name': 'Total Scans', 'value': jobs.count()}})
+
+
 class AnvilJobViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows Create, Delete, Viewing of Scans
